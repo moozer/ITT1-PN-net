@@ -26,7 +26,8 @@ chmod +x $VMWDOWNLOADNAME
 # 3. run with console options
 echo "running downloaded file with root permissions."
 echo "- you should be prompted for a root pasword now"
-./$VMWDOWNLOADNAME --console
+su -c "./$VMWDOWNLOADNAME --console --eulas-agreed --required"
 
 # ..
 echo vmware workstation should now be installed
+
