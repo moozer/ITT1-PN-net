@@ -24,10 +24,20 @@ wget -N $VMWDOWNLOAD
 chmod +x $VMWDOWNLOADNAME
 
 # 3. run with console options
-echo "running downloaded file with root permissions."
+echo "Running downloaded file with root permissions."
 echo "- you should be prompted for a root pasword now"
 su -c "./$VMWDOWNLOADNAME --console --eulas-agreed --required"
 
-# ..
-echo vmware workstation should now be installed
+echo "- vmware workstation should now be installed"
 
+# 4. install dependencies
+echo Installing extrapackages
+echo "- you will beprompted for root password again"
+su -c "apt-get install build-essential linux-headers-$(uname -r)"
+
+# done?
+echo "vmware workstation should now be installed and functional"
+
+# notes
+# --set-setting vmware-workstation serialNumber xxxxx-xxxxx-xxxxx-xxxxx-xxxxx 
+# to avoid the part about gui license keys...
