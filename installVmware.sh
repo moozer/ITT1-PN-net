@@ -17,7 +17,7 @@ echo Download from $VMWDOWNLOAD
 if -e "$VMBUNDLEDIR/VMware-Workstation-*"; then
 	echo - Bundle file already exists. Not downlaoding
 else
-	echo wget $VMWDOWNLOAD
+	wget -N $VMWDOWNLOAD
 fi
 
 # 2. make executable
