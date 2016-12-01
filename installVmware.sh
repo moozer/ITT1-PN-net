@@ -8,17 +8,17 @@ VMWURL="http://www.vmware.com/products/workstation/workstation-evaluation.html"
 VMWDOWNLOAD="http://www.vmware.com/go/tryworkstation-linux-64"
 VMWDOWNLOADNAME="tryworkstation-linux-64"
 
-echo Download from vmware.com and save to folder $VMBUNDLEDIR
-cd $VMBUNDLEDIR
+echo Download from vmware.com and save to folder $VMWBUNDLEDIR
+cd $VMWBUNDLEDIR
 
 # 1. get software
-echo Download from $VMWDOWNLOAD
+echo Download from $VMWDOWNLOAD, if applicable
 
-if -e "$VMBUNDLEDIR/VMware-Workstation-*"; then
-	echo - Bundle file already exists. Not downlaoding
-else
-	wget -N $VMWDOWNLOAD
-fi
+#if -e "$VMBUNDLEDIR/VMware-Workstation-*"; then
+#	echo - Bundle file already exists. Not downlaoding
+#else
+wget -N $VMWDOWNLOAD
+#fi
 
 # 2. make executable
 chmod +x $VMWDOWNLOADNAME
